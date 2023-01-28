@@ -3,11 +3,16 @@
   <header class="page-header">
     <h1>Order #<%= @order.id %></h1>
   </header>
+  <p> Your order has been placed successfully, and the receipt will be forwarded to your email, <%= @order.email %>. </p>
+
+  <%= render 'order' %>
+  
 
   <div class="order-summary jumbotron">
-    <h4>Thank you for your order!</h4>
+    <h4>Thank you, come again!</h4>
   </div>
 
+  </br>
   <%= link_to "Continue Shopping", root_path, class: 'btn btn-lg btn-primary' %>
 
 </section>

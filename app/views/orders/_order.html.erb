@@ -1,0 +1,40 @@
+<div class="panel panel-default items">
+
+    <table class="table table-bordered">
+  <thead>
+    <tr>
+      <th colspan="2">Product</th>
+      <th>Unit Price</th>
+      <th>Quantity</th>
+      <th>Price</th>
+    </tr>
+  </thead>
+  <tbody>
+
+ <% @order.line_items.each do |item| %>
+
+  <tr> 
+  <td> <p> <%= image_tag item.product.image.tiny.url %></p> </td>
+  <td> <p> <%= item.product.name %></p> </td>
+  <td> <p> $<%= Money.from_cents(item.item_price_cents, "CAD") %> </p> </td>
+  <td> <p> <%= item.quantity %></p> </td>
+  <td> <p> $<%= Money.from_cents(item.total_price_cents, "CAD") %></p> </td>
+  </tr>
+  <% end %>
+
+  </tbody>
+  <tfoot>
+    <tr>
+      <th colspan="4">
+        TOTAL:
+      </th>
+      <th>
+      $<%= Money.from_cents(@order.total_cents, "CAD") %>
+      </th>
+    </tr>
+  </tfoot>
+</table>
+
+
+
+</div>

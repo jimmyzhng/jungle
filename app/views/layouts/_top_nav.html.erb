@@ -9,6 +9,7 @@
 <nav class="navbar navbar-expand-lg navbar-dark sticky-nav">
   <div class="container">
     <a class="navbar-brand" href="<%= root_path %>">Jungle</a>
+    
     <button
       class="navbar-toggler"
       type="button"
@@ -20,9 +21,13 @@
     >
       <span class="navbar-toggler-icon"></span>
     </button>
+
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
         <%# <li class="nav-item dropdown">
+
           <a
             class="nav-link dropdown-toggle"
             href="#"
@@ -33,13 +38,20 @@
           > %>
             <%# Categories %>
           <%# </a>
+
           <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDropdown"> %>
+          <li class ="nav-item">
+          <%= link_to "About", "/about/index", class:"nav-link" %>
+          </li>
+
             <% Category.all.each do |category| %>
             <li class="nav-item">
               <%= link_to category.name, category, class: "nav-link" %>
             </li>
             <% end %>
+
           <%# </ul>
+          
         </li> %>
       </ul>
       <ul class="navbar-nav">

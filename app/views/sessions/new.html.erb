@@ -2,10 +2,18 @@
 <h1>Login </h1>
 </header>
 
+<div class="container">
 <%= form_tag '/login' do %>
 
-  Email: <%= text_field_tag :email %>
-  Password: <%= password_field_tag :password %>
-  <%= submit_tag "Submit" %>
+  <b> Email </b>
+  <br />
+  <%= text_field_tag :email %>
+  <br/>
+  <b> Password </b>
+  <br/>
+  <%= password_field_tag :password %>
+  <br />
+ <%= submit_tag "Login", class: "login-button" %>
 
 <% end %>
+</div>

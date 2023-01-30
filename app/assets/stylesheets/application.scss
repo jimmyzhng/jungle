@@ -112,11 +112,13 @@ form.button_to {
   color: #f38792 !important;
 }
 
-.login {
-  color: rgba(255, 255, 255, 0.55);
+.nav-right {
+  float: right;
 }
 
-a {
+.login-button {
+  background-color: green;
   color: rgba(255, 255, 255, 0.55);
-  text-decoration: none;
+  border-color: transparent;
+  margin-top: 5px;
 }

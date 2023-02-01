@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
     user = User.find_by_email(params[:email])
 
     # If user exists, and pw entered is correct
-    if user && user.authenticate(params[:password])
+    if user = User.authenticate_with_credentials(params[:email], params[:password])
       # save user id inside the browser cookie. this keeps user logged in
       session[:user_id] = user.id
       redirect_to '/'
